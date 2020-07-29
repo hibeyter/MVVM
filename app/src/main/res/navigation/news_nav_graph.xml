@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/news_nav_graph"
+    app:startDestination="@id/breakingNews">
+
+    <fragment
+        android:id="@+id/breakingNews"
+        android:name="com.football.mvvmarchitecture.ui.fragments.BreakingNews"
+        android:label="BreakingNews" >
+        <action
+            android:id="@+id/action_breakingNews_to_article"
+            app:destination="@id/article"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/article"
+        android:name="com.football.mvvmarchitecture.ui.fragments.ArticleFragment"
+        android:label="Article" >
+        <argument
+            android:name="article"
+            app:argType="com.football.mvvmarchitecture.models.Article" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedNews"
+        android:name="com.football.mvvmarchitecture.ui.fragments.SavedNews"
+        android:label="SavedNews" >
+        <action
+            android:id="@+id/action_savedNews_to_article"
+            app:destination="@id/article"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/searchNews"
+        android:name="com.football.mvvmarchitecture.ui.fragments.SearchNews"
+        android:label="SearchNews" >
+        <action
+            android:id="@+id/action_searchNews_to_article"
+            app:destination="@id/article"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+</navigation>
